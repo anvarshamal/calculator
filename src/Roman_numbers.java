@@ -81,7 +81,7 @@ public class Roman_numbers {
     private String toRoman(int result) {
 
         String roman = "";
-        switch (result % 10) { // тут мы трехзнаные число делим по разрядам, тут у нас еденичные числа
+        switch (result % 10) { // тут мы трехзнаные число делим по разрядам, тут у нас еденичные разряды
             case 1:
                 roman = "I";
                 break;
@@ -105,6 +105,7 @@ public class Roman_numbers {
                 break;
             case 8:
                 roman = "VIII";
+                break;
             case 9:
                 roman = "IX";
                 break;
@@ -136,11 +137,12 @@ public class Roman_numbers {
                 break;
             case 8:
                 roman = "LXXX" + roman;
+                break;
             case 9:
                 roman = "XC" + roman;
                 break;
         }
-        if (result/100%10 == 1) roman = "C" + roman;
+        if ((result/100)%10 == 1) roman = "C" + roman;
         return roman;
     }
 }
